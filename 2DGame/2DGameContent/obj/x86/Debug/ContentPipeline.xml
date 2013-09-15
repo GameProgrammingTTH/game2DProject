@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>images\background\bgMainMenu.jpg</Source>
+      <Name>images\background\bgMainMenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\background\bgMainMenu.xnb</Output>
+      <Time>2013-09-15T13:07:02+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\cursors\cursor1.png</Source>
+      <Name>images\cursors\cursor1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\cursors\cursor1.xnb</Output>
+      <Time>2013-09-15T13:33:18+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\button\option.png</Source>
+      <Name>images\button\option</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\button\option.xnb</Output>
+      <Time>2013-09-15T14:29:04+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\button\play.png</Source>
+      <Name>images\button\play</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\button\play.xnb</Output>
+      <Time>2013-09-15T14:29:08+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\button\exit.png</Source>
+      <Name>images\button\exit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\button\exit.xnb</Output>
+      <Time>2013-09-15T14:42:38+07:00</Time>
+    </Item>
+    <Item>
+      <Source>images\button\howToPlay.png</Source>
+      <Name>images\button\howToPlay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\images\button\howToPlay.xnb</Output>
+      <Time>2013-09-15T15:10:00+07:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Arial.spritefont</Source>
+      <Name>Fonts\Arial</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\Fonts\Arial.xnb</Output>
+      <Time>2013-09-15T15:13:40+07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGameContent\</RootDirectory>
+      <LoggerRootDirectory>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\</LoggerRootDirectory>
+      <IntermediateDirectory>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGameContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>E:\VS 2010 Projects\VC#\2DGame\2DGame\2DGame\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-08-30T17:17:23.6075367+07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
