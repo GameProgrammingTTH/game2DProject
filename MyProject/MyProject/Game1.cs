@@ -170,10 +170,10 @@ namespace MyProject
             //draw the the game when playing
             if (gameState == GameState.Playing)
             {
-                
+                lv1.Draw(spriteBatch);   
                 //pause button
                 spriteBatch.Draw(pauseButton, new Vector2(0, 0), Color.White);
-                lv1.Draw(spriteBatch);
+             
             }
 
             //draw the pause screen
