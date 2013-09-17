@@ -10,3 +10,19 @@ C:\Users\Tuan\Desktop\MyProject\MyProject\MyProject\bin\x86\Debug\MyProject.pdb
 C:\Users\Tuan\Desktop\MyProject\MyProject\MyProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tuan\Desktop\MyProject\MyProject\MyProject\obj\x86\Debug\MyProject.exe
 C:\Users\Tuan\Desktop\MyProject\MyProject\MyProject\obj\x86\Debug\MyProject.pdb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\exit.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\howToPlay.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\loading.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\menu.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\pause.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\resume.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\start.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\MyProject.exe
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\MyProject.pdb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\obj\x86\Debug\MyProject.exe
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\obj\x86\Debug\MyProject.pdb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\letters\letterA.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\solidred.xnb
+E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\bglv1.xnb

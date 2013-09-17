@@ -44,6 +44,7 @@ namespace MyProject
         GameState gameState;
         Thread backgroundThread;
         bool isLoading = false;
+        Level1 lv1;
 
         MouseState mouseState;
         MouseState previousMouseState;
@@ -71,6 +72,12 @@ namespace MyProject
             mouseState = Mouse.GetState();
             previousMouseState = mouseState;
 
+            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferHeight = 680;
+            graphics.ApplyChanges();
+
+            lv1 = new Level1();
+
             base.Initialize();
         }
 
@@ -87,6 +94,8 @@ namespace MyProject
 
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>("loading");
+
+            lv1.LoadContent(Content);
         }
 
         
@@ -163,7 +172,7 @@ namespace MyProject
                 
                 //pause button
                 spriteBatch.Draw(pauseButton, new Vector2(0, 0), Color.White);
-
+                lv1.Draw(spriteBatch);
             }
 
             //draw the pause screen

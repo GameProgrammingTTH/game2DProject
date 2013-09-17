@@ -5,3 +5,6 @@ Content\menu.xnb
 Content\pause.xnb
 Content\resume.xnb
 Content\start.xnb
+Content\letters\letterA.xnb
+Content\solidred.xnb
+Content\bglv1.xnb
