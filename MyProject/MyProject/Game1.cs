@@ -60,6 +60,9 @@ namespace MyProject
             //enable the mousepointer
             IsMouseVisible = true;
             this.Window.Title = "English Game 2d";
+            graphics.PreferredBackBufferWidth = 900;
+            graphics.PreferredBackBufferHeight = 680;
+            graphics.ApplyChanges();
             ////set the position of the buttons
             startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 70, 200);
             howToPlayPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 70, 250);
@@ -72,9 +75,7 @@ namespace MyProject
             mouseState = Mouse.GetState();
             previousMouseState = mouseState;
 
-            graphics.PreferredBackBufferWidth = 900;
-            graphics.PreferredBackBufferHeight = 680;
-            graphics.ApplyChanges();
+            
 
             lv1 = new Level1();
 

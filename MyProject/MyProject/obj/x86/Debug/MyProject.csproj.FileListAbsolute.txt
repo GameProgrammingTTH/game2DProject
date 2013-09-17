@@ -26,3 +26,18 @@ E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\obj\x86\Debug\MyProject.pdb
 E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\letters\letterA.xnb
 E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\solidred.xnb
 E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\bglv1.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\exit.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\howToPlay.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\loading.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\menu.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\pause.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\resume.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\start.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\letters\letterA.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\solidred.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\bglv1.xnb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\MyProject.exe
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\MyProject.pdb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\MyProject.exe
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\MyProject.pdb

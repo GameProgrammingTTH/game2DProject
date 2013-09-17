@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\exit.xnb</Output>
-      <Time>2013-09-16T17:26:10.9664131+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\exit.xnb</Output>
+      <Time>2013-09-15T22:51:24.7451074+07:00</Time>
     </Item>
     <Item>
       <Source>howToPlay.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\howToPlay.xnb</Output>
-      <Time>2013-09-16T17:26:10.9664131+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\howToPlay.xnb</Output>
+      <Time>2013-09-15T22:51:24.7651074+07:00</Time>
     </Item>
     <Item>
       <Source>loading.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\loading.xnb</Output>
-      <Time>2013-09-16T17:26:10.9820132+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\loading.xnb</Output>
+      <Time>2013-09-15T22:51:24.7651074+07:00</Time>
     </Item>
     <Item>
       <Source>menu.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\menu.xnb</Output>
-      <Time>2013-09-16T17:26:10.9820132+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\menu.xnb</Output>
+      <Time>2013-09-15T22:51:24.7651074+07:00</Time>
     </Item>
     <Item>
       <Source>pause.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\pause.xnb</Output>
-      <Time>2013-09-16T17:26:10.9820132+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\pause.xnb</Output>
+      <Time>2013-09-15T22:51:24.7751074+07:00</Time>
     </Item>
     <Item>
       <Source>resume.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\resume.xnb</Output>
-      <Time>2013-09-16T17:26:10.9820132+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\resume.xnb</Output>
+      <Time>2013-09-15T22:51:24.7751074+07:00</Time>
     </Item>
     <Item>
       <Source>start.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\start.xnb</Output>
-      <Time>2013-09-16T17:26:10.9820132+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\start.xnb</Output>
+      <Time>2013-09-15T22:51:24.7751074+07:00</Time>
     </Item>
     <Item>
       <Source>letters\letterA.jpg</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\letters\letterA.xnb</Output>
-      <Time>2013-09-16T21:58:18.0374748+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\letters\letterA.xnb</Output>
+      <Time>2013-09-17T21:14:10.5423188+07:00</Time>
     </Item>
     <Item>
       <Source>solidred.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\solidred.xnb</Output>
-      <Time>2013-09-16T22:23:49.6371806+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\solidred.xnb</Output>
+      <Time>2013-09-17T21:14:10.546319+07:00</Time>
     </Item>
     <Item>
       <Source>bglv1.jpg</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\bglv1.xnb</Output>
-      <Time>2013-09-16T22:28:57.3637816+07:00</Time>
+      <Output>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\bglv1.xnb</Output>
+      <Time>2013-09-17T21:14:10.5413187+07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -97,10 +97,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProjectContent\</RootDirectory>
-      <LoggerRootDirectory>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\</LoggerRootDirectory>
-      <IntermediateDirectory>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProjectContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>E:\VS 2010 Projects\VC#\Game2D\MyProject\MyProject\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProjectContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProjectContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -129,7 +129,7 @@
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-08-30T17:17:23.6075367+07:00</Value>
+        <Value>2013-09-05T09:05:36.0496033+07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

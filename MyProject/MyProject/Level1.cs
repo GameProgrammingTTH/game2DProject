@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace MyProject
 {
-    class Level1:Game1
+    class Level1
     {
         Rectangle alphabet;
         Rectangle answer;
