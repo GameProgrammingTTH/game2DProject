@@ -41,3 +41,4 @@ C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\bin\x86\Debug\MyProject.pdb
 C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\MyProject.exe
 C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\MyProject.pdb
+C:\Users\Tuan\Desktop\LTgame\MyProject\MyProject\obj\x86\Debug\MyProject.csprojResolveAssemblyReference.cache

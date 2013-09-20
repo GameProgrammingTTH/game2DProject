@@ -26,21 +26,19 @@ namespace MyProject
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D orb;
         Texture2D startButton;
         Texture2D exitButton;
         Texture2D howToPlayButton;
         Texture2D pauseButton;
         Texture2D resumeButton;
         Texture2D loadingScreen;
-        Vector2 orbPosition;
+        Texture2D gotoMainMenu;
         Vector2 startButtonPosition;
         Vector2 howToPlayPosition;
         Vector2 exitButtonPosition;
         Vector2 resumeButtonPosition;
-        const float OrbWidth = 50f;
-        const float OrbHeight = 50f;
-        float speed = 1.5f;
+        Vector2 gotoMainMenuPosition;
+
         GameState gameState;
         Thread backgroundThread;
         bool isLoading = false;
@@ -63,11 +61,7 @@ namespace MyProject
             graphics.PreferredBackBufferWidth = 900;
             graphics.PreferredBackBufferHeight = 680;
             graphics.ApplyChanges();
-            ////set the position of the buttons
-            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 70, 200);
-            howToPlayPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 70, 250);
-            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - 70, 300);
-
+            
             //set the gamestate to start menu
             gameState = GameState.StartMenu;
 
@@ -92,6 +86,13 @@ namespace MyProject
             startButton = Content.Load<Texture2D>("start");
             exitButton = Content.Load<Texture2D>("exit");
             howToPlayButton = Content.Load<Texture2D>("howToPlay");
+            ////set the position of the buttons
+            startButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (startButton.Width / 2),
+                                               (GraphicsDevice.Viewport.Height / 2) - (startButton.Height / 2) - 100);
+            howToPlayPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (howToPlayButton.Width / 2),
+                                               (GraphicsDevice.Viewport.Height / 2) - (howToPlayButton.Height / 2));
+            exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (exitButton.Width / 2),
+                                               (GraphicsDevice.Viewport.Height / 2) - (exitButton.Height / 2) + 100);
 
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>("loading");
@@ -179,6 +180,7 @@ namespace MyProject
             //draw the pause screen
             if (gameState == GameState.Paused)
             {
+                spriteBatch.Draw(gotoMainMenu, gotoMainMenuPosition, Color.White);
                 spriteBatch.Draw(resumeButton, resumeButtonPosition, Color.White);
                 spriteBatch.Draw(exitButton, exitButtonPosition, Color.White);
             }
@@ -229,6 +231,7 @@ namespace MyProject
             //check the resumebutton
             if (gameState == GameState.Paused)
             {
+                Rectangle gotoMainmenuRect = new Rectangle((int)gotoMainMenuPosition.X, (int)gotoMainMenuPosition.Y, 163, 40);
                 Rectangle resumeButtonRect = new Rectangle((int)resumeButtonPosition.X, (int)resumeButtonPosition.Y, 163, 40);
                 Rectangle exitButtonRect = new Rectangle((int)exitButtonPosition.X, (int)exitButtonPosition.Y, 163, 40);
                 if (mouseClickRect.Intersects(resumeButtonRect))
@@ -239,15 +242,22 @@ namespace MyProject
                 {
                     this.Exit();
                 }
+                else if (mouseClickRect.Intersects(gotoMainmenuRect))
+                {
+                    gameState = GameState.StartMenu;
+                }
             }
         }
 
         void LoadGame()
         {
             //load the game images into the content pipeline
-            
-            pauseButton = Content.Load<Texture2D>(@"pause");
-            resumeButton = Content.Load<Texture2D>(@"resume");
+
+            gotoMainMenu = Content.Load<Texture2D>("menu");
+            pauseButton = Content.Load<Texture2D>("pause");
+            resumeButton = Content.Load<Texture2D>("resume");
+            gotoMainMenuPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (gotoMainMenu.Width / 2),
+                                               (GraphicsDevice.Viewport.Height / 2) - (gotoMainMenu.Height / 2) - 100);
             resumeButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (resumeButton.Width / 2),
                                                (GraphicsDevice.Viewport.Height / 2) - (resumeButton.Height / 2));
             exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (resumeButton.Width / 2),
