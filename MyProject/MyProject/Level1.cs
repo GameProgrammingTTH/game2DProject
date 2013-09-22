@@ -26,7 +26,7 @@ namespace MyProject
         Vector2 submitButtonPosition, clearButtonPosition;
 
         //font
-        SpriteFont lettersText, answerText, msgText, AnnouText;
+        SpriteFont lettersText, answerText, msgText, AnnouText, lifeText;
 
         
         Texture2D texBg;
@@ -39,10 +39,11 @@ namespace MyProject
         //Thread gotoNextLevelThread;
 
         //double timeToNextLevel = 0;
-        bool nextLevel = false;
+        
         string keyword = "listen";
         string answerKey = "";
-        public int score = 0;
+
+        public int score = 0, life = 3;
         string msg = "";
         int count = 0;
         MouseState mouseState;
@@ -51,6 +52,7 @@ namespace MyProject
         {
             mouseState = Mouse.GetState();
             previousMouseState = mouseState;
+            life = 3;
             
             
         }
@@ -62,6 +64,7 @@ namespace MyProject
             lettersText = Content.Load<SpriteFont>("Arial");
             answerText = Content.Load<SpriteFont>("Arial");
             AnnouText = Content.Load<SpriteFont>("smallArial");
+            lifeText = Content.Load<SpriteFont>("Arial");
             msgText = Content.Load<SpriteFont>("smallArial");
 
             texBg = Content.Load<Texture2D>("bglv1");
@@ -84,13 +87,13 @@ namespace MyProject
 
 
             //--
-            tButton = Content.Load<Texture2D>("t");
-            lButton = Content.Load<Texture2D>("l");
-            aButton = Content.Load<Texture2D>("a");
-            iButton = Content.Load<Texture2D>("i");
-            sButton = Content.Load<Texture2D>("s");
-            nButton = Content.Load<Texture2D>("n");
-            eButton = Content.Load<Texture2D>("e");
+            tButton = Content.Load<Texture2D>("letters/t");
+            lButton = Content.Load<Texture2D>("letters/l");
+            aButton = Content.Load<Texture2D>("letters/a");
+            iButton = Content.Load<Texture2D>("letters/i");
+            sButton = Content.Load<Texture2D>("letters/s");
+            nButton = Content.Load<Texture2D>("letters/n");
+            eButton = Content.Load<Texture2D>("letters/e");
 
             setLetterPosition();
             
@@ -126,103 +129,119 @@ namespace MyProject
             Rectangle tButtonRect = new Rectangle((int)tButtonPosition.X, (int)tButtonPosition.Y, tButton.Width, tButton.Height);
             Rectangle eButtonRect = new Rectangle((int)eButtonPosition.X, (int)eButtonPosition.Y, eButton.Width, eButton.Height);
             Rectangle nButtonRect = new Rectangle((int)nButtonPosition.X, (int)nButtonPosition.Y, nButton.Width, nButton.Height);
+            // Block rect
+            Rectangle blockRect =  new Rectangle(100,500,600,70);
 
-
-            if (mouseClickRect.Intersects(submitButtonRect)) //player clicked submit button
+            if (!mouseClickRect.Intersects(blockRect))
             {
-                // check keyword and answer
-                if (count == 6)
+
+                if (mouseClickRect.Intersects(submitButtonRect)) //player clicked submit button
                 {
-                    xAnswerPosition = 150;
-                    count = 0;
-                    if (String.Compare(keyword, answerKey) == 0)
+                    // check keyword and answer
+                    if (count == 6)
                     {
-                        nextLevel = true;
-                        msg = "Congratulation!";
-                        score = 60;
-                        answerKey = "";
-                        setLetterPosition();
-                    
+                        xAnswerPosition = 150;
+                        count = 0;
+                        if (String.Compare(keyword, answerKey) == 0)
+                        {
+                            
+                            msg = "Congratulation!";
+                            score = 60;
+                            answerKey = "";
+                            setLetterPosition();
+
+                        }
+                        else
+                        {
+                            msg = "Wrong answer!";
+                            answerKey = "";
+                            life--;
+                            setLetterPosition();
+                        }
                     }
-                    else
+                }
+                if (mouseClickRect.Intersects(clearButtonRect)) // player clicked clear button
+                {
+
+                    clear();
+
+                }
+                if (count < 6)
+                {
+
+                    if (mouseClickRect.Intersects(aButtonRect))
                     {
-                        msg = "Wrong answer!";
-                        answerKey = "";
-                        setLetterPosition();
+                        //draw a letter and add it into answerkey
+                        answerKey = String.Concat(answerKey, "a");
+                        aButtonPosition.X = xAnswerPosition;
+                        aButtonPosition.Y = yAnswerPosition;
+
+                        xAnswerPosition = xAnswerPosition + 70;
+                        count++;
+                        setDefaultMsg();
                     }
-                }
-            }
-            if (mouseClickRect.Intersects(clearButtonRect)) // player clicked clear button
-            {
-                clear();
-                
-            }
-            if (count < 6)
-            {
-                
-                if (mouseClickRect.Intersects(aButtonRect))
-                {
-                    //draw a letter and add it into answerkey
-                    answerKey = String.Concat(answerKey, "a");
-                    aButtonPosition.X = xAnswerPosition;
-                    aButtonPosition.Y = yAnswerPosition;
-
-                    xAnswerPosition = xAnswerPosition + 70;
-                    count++;
-                }
-                if (mouseClickRect.Intersects(lButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "l");
-                    lButtonPosition.X = xAnswerPosition;
-                    lButtonPosition.Y = yAnswerPosition;
-
-                    xAnswerPosition = xAnswerPosition + 70;
-                    count++;
-                }
-                if (mouseClickRect.Intersects(iButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "i");
-                    iButtonPosition.X = xAnswerPosition;
-                    iButtonPosition.Y = yAnswerPosition;
-                    count++;
-                    xAnswerPosition = xAnswerPosition + 70;
-                }
-                if (mouseClickRect.Intersects(sButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "s");
-                    sButtonPosition.X = xAnswerPosition;
-                    sButtonPosition.Y = yAnswerPosition;
-                    count++;
-                    xAnswerPosition = xAnswerPosition + 70;
-                }
-                if (mouseClickRect.Intersects(tButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "t");
-                    tButtonPosition.X = xAnswerPosition;
-                    tButtonPosition.Y = yAnswerPosition;
-                    count++;
-                    xAnswerPosition = xAnswerPosition + 70;
-                }
-                if (mouseClickRect.Intersects(eButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "e");
-                    eButtonPosition.X = xAnswerPosition;
-                    eButtonPosition.Y = yAnswerPosition;
-                    count++;
-                    xAnswerPosition = xAnswerPosition + 70;
-                }
-                if (mouseClickRect.Intersects(nButtonRect))
-                {
-                    answerKey = String.Concat(answerKey, "n");
-                    nButtonPosition.X = xAnswerPosition;
-                    nButtonPosition.Y = yAnswerPosition;
-                    count++;
-                    xAnswerPosition = xAnswerPosition + 70;
+                    if (mouseClickRect.Intersects(lButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "l");
+                        lButtonPosition.X = xAnswerPosition;
+                        lButtonPosition.Y = yAnswerPosition;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                        count++;
+                    }
+                    if (mouseClickRect.Intersects(iButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "i");
+                        iButtonPosition.X = xAnswerPosition;
+                        iButtonPosition.Y = yAnswerPosition;
+                        count++;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                    }
+                    if (mouseClickRect.Intersects(sButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "s");
+                        sButtonPosition.X = xAnswerPosition;
+                        sButtonPosition.Y = yAnswerPosition;
+                        count++;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                    }
+                    if (mouseClickRect.Intersects(tButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "t");
+                        tButtonPosition.X = xAnswerPosition;
+                        tButtonPosition.Y = yAnswerPosition;
+                        count++;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                    }
+                    if (mouseClickRect.Intersects(eButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "e");
+                        eButtonPosition.X = xAnswerPosition;
+                        eButtonPosition.Y = yAnswerPosition;
+                        count++;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                    }
+                    if (mouseClickRect.Intersects(nButtonRect))
+                    {
+                        answerKey = String.Concat(answerKey, "n");
+                        nButtonPosition.X = xAnswerPosition;
+                        nButtonPosition.Y = yAnswerPosition;
+                        count++;
+                        setDefaultMsg();
+                        xAnswerPosition = xAnswerPosition + 70;
+                    }
                 }
             }
         }
 
-
+        public void setDefaultMsg()
+        {
+            msg = "";
+        }
         public void Draw(SpriteBatch sp)
         {
             
@@ -243,6 +262,7 @@ namespace MyProject
             sp.DrawString(answerText, "Answer:", new Vector2(20, 510), Color.Red);
             sp.DrawString(lettersText, "Letters:", new Vector2(20, 610), Color.Red);
             sp.DrawString(AnnouText, "Hint: 6 letters", new Vector2(200, 450), Color.Blue);
+            sp.DrawString(lifeText, "Life:   " + life, new Vector2(750, 100), Color.Red);
             sp.DrawString(msgText, msg, new Vector2(750, 610), Color.Green);
                 
             
@@ -260,6 +280,7 @@ namespace MyProject
         public void clear()
         {
             count = 0;
+            
             msg = "";
             answerKey = "";
             xAnswerPosition = 150;

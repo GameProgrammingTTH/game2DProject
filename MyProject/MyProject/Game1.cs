@@ -23,17 +23,15 @@ namespace MyProject
             HowToPlay,
             Playing,
             Paused,
-            NextLevel
+            NextLevel,
+            GameOver
         }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D startButton;
-        Texture2D exitButton;
-        Texture2D howToPlayButton;
-        Texture2D pauseButton;
-        Texture2D resumeButton;
-        Texture2D loadingScreen, nextLevelScreen;
+        Texture2D resumeButton,pauseButton,howToPlayButton,exitButton,startButton;
+        
+        Texture2D loadingScreen, nextLevelScreen, gameOverScreen;
         Texture2D gotoMainMenu;
         Vector2 startButtonPosition;
         Vector2 howToPlayPosition;
@@ -110,6 +108,7 @@ namespace MyProject
 
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>("loading");
+            gameOverScreen = Content.Load<Texture2D>("gameOver");
             nextLevelScreen = Content.Load<Texture2D>("nextLevel");
             lv1.LoadContent(Content);
             
@@ -187,17 +186,32 @@ namespace MyProject
             if (gameState == GameState.Loading)
             {
                 spriteBatch.Draw(loadingScreen, new Vector2((GraphicsDevice.Viewport.Width / 2) - (loadingScreen.Width / 2), (GraphicsDevice.Viewport.Height / 2) - (loadingScreen.Height / 2)), Color.YellowGreen);
+                
             }
+            //show next level screen
+
             if (gameState == GameState.NextLevel)
             {
                 spriteBatch.Draw(nextLevelScreen, Vector2.Zero, Color.White);
+            }
+            //show gameOver screen
+            if (gameState == GameState.GameOver)
+            {
+                spriteBatch.Draw(gameOverScreen, Vector2.Zero, Color.White);
+                spriteBatch.Draw(gotoMainMenu, new Vector2(380,500), Color.White);
             }
             //draw the the game when playing
             if (gameState == GameState.Playing)
             {
                 if (level == 1)
                 {
+
                     lv1.Draw(spriteBatch);
+                    if (lv1.life == 0)
+                    {
+                        gameState = GameState.GameOver;
+                        lv1.life = 3;
+                    }
                     if(lv1.score != 0)
                     {
                         Score += lv1.score;
@@ -207,6 +221,7 @@ namespace MyProject
                         gameState = GameState.NextLevel;
                     }
                 }
+
                 
                 //menu top
                 spriteBatch.Draw(pauseButton, new Vector2(0, 0), Color.White);
@@ -266,7 +281,19 @@ namespace MyProject
                     gameState = GameState.Paused;
                 }
             }
-
+            // check the game over
+            if (gameState == GameState.GameOver)
+            { 
+                Rectangle gotoMainmenuRect = new Rectangle(380,500, 163, 40);
+                if (mouseClickRect.Intersects(gotoMainmenuRect))
+                {
+                    gameState = GameState.StartMenu;
+                    Score = 0;
+                    level = 1;
+                    
+                    clearAllLv();
+                }
+            }
             //check the resumebutton
             if (gameState == GameState.Paused)
             {
@@ -281,12 +308,13 @@ namespace MyProject
                 {
                     this.Exit();
                 }
+                
                 else if (mouseClickRect.Intersects(gotoMainmenuRect))
                 {
                     gameState = GameState.StartMenu;
                     Score = 0;
                     level = 1;
-                    lv1.clear();
+                    clearAllLv();
                 }
             }
         }
@@ -312,6 +340,10 @@ namespace MyProject
             //start playing
             gameState = GameState.Playing;
             isLoading = false;
+        }
+        public void clearAllLv()
+        {
+            lv1.clear();
         }
         public void NextLevelFunc()
         {
