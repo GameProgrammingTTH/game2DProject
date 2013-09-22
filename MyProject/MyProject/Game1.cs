@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -21,7 +22,8 @@ namespace MyProject
             Loading,
             HowToPlay,
             Playing,
-            Paused
+            Paused,
+            NextLevel
         }
 
         GraphicsDeviceManager graphics;
@@ -31,7 +33,7 @@ namespace MyProject
         Texture2D howToPlayButton;
         Texture2D pauseButton;
         Texture2D resumeButton;
-        Texture2D loadingScreen;
+        Texture2D loadingScreen, nextLevelScreen;
         Texture2D gotoMainMenu;
         Vector2 startButtonPosition;
         Vector2 howToPlayPosition;
@@ -39,8 +41,12 @@ namespace MyProject
         Vector2 resumeButtonPosition;
         Vector2 gotoMainMenuPosition;
 
+        int Score = 0, level = 1;
+
+        SpriteFont fontScore, fontLevel;
+        
         GameState gameState;
-        Thread backgroundThread;
+        Thread backgroundThread, nextLevelThread;
         bool isLoading = false;
         Level1 lv1;
 
@@ -70,6 +76,7 @@ namespace MyProject
             previousMouseState = mouseState;
 
             
+            
 
             lv1 = new Level1();
 
@@ -82,6 +89,10 @@ namespace MyProject
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+
+            //score and level
+            fontScore = Content.Load<SpriteFont>("Arial");
+            fontLevel = Content.Load<SpriteFont>("Arial");
             //load the buttonimages into the content pipeline
             startButton = Content.Load<Texture2D>("start");
             exitButton = Content.Load<Texture2D>("exit");
@@ -94,10 +105,14 @@ namespace MyProject
             exitButtonPosition = new Vector2((GraphicsDevice.Viewport.Width / 2) - (exitButton.Width / 2),
                                                (GraphicsDevice.Viewport.Height / 2) - (exitButton.Height / 2) + 100);
 
+            Console.WriteLine(startButton.Name);
+            Debug.WriteLine(startButton.Name);
+
             //load the loading screen
             loadingScreen = Content.Load<Texture2D>("loading");
-
+            nextLevelScreen = Content.Load<Texture2D>("nextLevel");
             lv1.LoadContent(Content);
+            
         }
 
         
@@ -122,11 +137,17 @@ namespace MyProject
                 //start backgroundthread
                 backgroundThread.Start();
             }
+            if (gameState == GameState.NextLevel)
+            {
+                nextLevelThread = new Thread(NextLevelFunc);
+                nextLevelThread.Start();
+                
+            }
 
             //move the orb if the game is in progress
             if (gameState == GameState.Playing)
             {
-                
+                lv1.Update(gameTime);
             }
 
             //wait for mouseclick
@@ -167,14 +188,32 @@ namespace MyProject
             {
                 spriteBatch.Draw(loadingScreen, new Vector2((GraphicsDevice.Viewport.Width / 2) - (loadingScreen.Width / 2), (GraphicsDevice.Viewport.Height / 2) - (loadingScreen.Height / 2)), Color.YellowGreen);
             }
-
+            if (gameState == GameState.NextLevel)
+            {
+                spriteBatch.Draw(nextLevelScreen, Vector2.Zero, Color.White);
+            }
             //draw the the game when playing
             if (gameState == GameState.Playing)
             {
-                lv1.Draw(spriteBatch);   
-                //pause button
+                if (level == 1)
+                {
+                    lv1.Draw(spriteBatch);
+                    if(lv1.score != 0)
+                    {
+                        Score += lv1.score;
+                        lv1.score = 0;
+                        // goto next lv
+                        level++;
+                        gameState = GameState.NextLevel;
+                    }
+                }
+                
+                //menu top
                 spriteBatch.Draw(pauseButton, new Vector2(0, 0), Color.White);
-             
+                spriteBatch.DrawString(fontScore, "Score:  " + Score, new Vector2(750, 5), Color.Blue);
+                spriteBatch.DrawString(fontLevel, "Level:  " + level, new Vector2(750, 50), Color.Red);
+                
+                
             }
 
             //draw the pause screen
@@ -245,6 +284,9 @@ namespace MyProject
                 else if (mouseClickRect.Intersects(gotoMainmenuRect))
                 {
                     gameState = GameState.StartMenu;
+                    Score = 0;
+                    level = 1;
+                    lv1.clear();
                 }
             }
         }
@@ -270,6 +312,11 @@ namespace MyProject
             //start playing
             gameState = GameState.Playing;
             isLoading = false;
+        }
+        public void NextLevelFunc()
+        {
+            Thread.Sleep(3000);
+            gameState = GameState.Playing;
         }
     }
 }
